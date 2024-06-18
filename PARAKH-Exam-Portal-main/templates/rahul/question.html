@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightcyan;
+        }
+
+        .sidebar {
+            /* Sidebar styles here (similar to your admin sidebar) */
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .questions-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .question h3 {
+            color: #333;
+        }
+
+        .question p {
+            color: #555;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination-button {
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .content {
+                margin-left: 0;
+            }
+
+            .sidebar {
+                width: 100%;
+                position: relative;
+            }
+
+            .questions-container {
+                margin: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .question {
+                padding: 10px;
+            }
+
+            .pagination {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pagination-button {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <!-- Sidebar content here (similar to your admin sidebar) -->
+    </div>
+
+    <div class="content">
+        <div class="questions-container">
+            <div class="question">
+                <!-- Placeholder for Question 1 -->
+                <h3>Question 1</h3>
+                <p>This is the content of question 1.</p>
+            </div>
+
+            <div class="question">
+                <!-- Placeholder for Question 2 -->
+                <h3>Question 2</h3>
+                <p>This is the content of question 2.</p>
+            </div>
+
+            <div class="question">
+                <!-- Placeholder for Question 3 -->
+                <h3>Question 3</h3>
+                <p>This is the content of question 3.</p>
+            </div>
+
+            <div class="pagination">
+                <button class="pagination-button">Previous</button>
+                <button class="pagination-button">Next</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

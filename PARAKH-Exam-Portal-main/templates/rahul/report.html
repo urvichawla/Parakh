@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Home Page Report Window</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .container {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+      
+      .search-bar {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+      
+      .search-bar input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+      }
+      
+      .search-bar button {
+        margin-left: 0.5rem;
+        padding: 0.5rem;
+        background-color: #000;
+        color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+      }
+      
+      .report-window {
+        overflow-y: auto;
+      }
+      
+      .report-window table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      
+      .report-window th,
+      .report-window td {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+      }
+      
+  </style>
+  <script>
+    
+  </script>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Student Report</h1>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search for student by username">
+      <button type="submit">Search</button>
+    </div>
+
+    <div class="report-window">
+
+      <table>
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- This is where the brief report of each student will be displayed -->
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

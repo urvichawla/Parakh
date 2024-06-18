@@ -1,0 +1,80 @@
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background image */
+.background-image {
+    background-image: url('https://studentprojectguide.com/wp-content/uploads/2020/07/Online-Exam-Portal.jpeg'); /* Replace with your image URL */
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+/* Style the container and content */
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    text-align: center;
+    color: #fff;
+}
+
+/* Style the heading and options */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+    
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+}
+
+.admin-btn {
+    background-color: #007bff;
+}
+
+.student-btn {
+    background-color: #06691d;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Style the quote */
+.quote {
+    font-style: italic;
+    font-size: 20px;
+    margin-top: 40px;
+}

@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css\welcome.css'%}">
+    <title>Exam Portal</title>
+</head>
+<body>
+    <div class="container">
+        <div class="background-image"></div>
+        <div class="content">
+            <h1>Welcome to the Exam Portal</h1>
+            <p>Choose your role:</p>
+            <div class="options">
+                <a href="{% url 'admin_login' %}" class="btn admin-btn">Login as Admin</a>
+                <a href="{% url 'student_page' %}" class="btn student-btn">Login as Student</a>
+            </div>
+            <p class="quote">"Education is the key to success."</p>
+        </div>
+    </div>
+</body>
+</html>

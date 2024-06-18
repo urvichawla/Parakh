@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz</title>
+    <link rel="stylesheet" href="{% static 'css/exam_mcq.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>MCQ Quiz</h1>
+        <div class="question">
+            <p>What is the capital of France?</p>
+        </div>
+        <div class="options">
+            <div class="option" onclick="toggleCheckbox(1)">
+                <div class="checkbox" id="checkbox1"></div>
+                <label class="option-label">Paris</label>
+            </div>
+            <div class="option" onclick="toggleCheckbox(2)">
+                <div class="checkbox" id="checkbox2"></div>
+                <label class="option-label">Berlin</label>
+            </div>
+            <div class="option" onclick="toggleCheckbox(3)">
+                <div class="checkbox" id="checkbox3"></div>
+                <label class="option-label">Madrid</label>
+            </div>
+            <div class="option" onclick="toggleCheckbox(4)">
+                <div class="checkbox" id="checkbox4"></div>
+                <label class="option-label">Rome</label>
+            </div>
+        </div>
+        <div class="nav-buttons">
+            <button class="nav-button" onclick="prevQuestion()">Previous</button>
+            <button class="nav-button" onclick="nextQuestion()">Next</button>
+            <button class="end-task-button" onclick="endTask()">End Task</button>
+        </div>
+    </div>
+
+    <!-- <script>
+        let currentQuestion = 0;
+        let selectedOption = null;
+        let questionCount = 0;
+
+        const questionsAndOptions = shuffle([
+            {
+                question: "What is the capital of France?",
+                options: ["Paris", "Berlin", "Madrid", "Rome"]
+            },
+            {
+                question: "What is the largest planet in our solar system?",
+                options: ["Jupiter", "Saturn", "Mars", "Earth"]
+            },
+            {
+                question: "Who wrote the play 'Romeo and Juliet'?",
+                options: ["William Shakespeare", "Charles Dickens", "Jane Austen", "Mark Twain"]
+            }
+            // Add more questions and options as needed
+        ]);
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function toggleCheckbox(optionNumber) {
+            // Reset all checkboxes
+            for (let i = 1; i <= 4; i++) {
+                const checkbox = document.getElementById(`checkbox${i}`);
+                checkbox.classList.remove('checked');
+            }
+
+            // Toggle the selected checkbox
+            const checkbox = document.getElementById(`checkbox${optionNumber}`);
+            checkbox.classList.add('checked');
+            selectedOption = optionNumber;
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion(currentQuestion);
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questionsAndOptions.length - 1) {
+                currentQuestion++;
+                loadQuestion(currentQuestion);
+            } else {
+                if (questionCount < 20) {
+                    questionCount++;
+                    generateRandomQuestion();
+                }
+            }
+        }
+
+        function generateRandomQuestion() {
+            // Load the next question and options from the shuffled array
+            if (questionCount < questionsAndOptions.length) {
+                const questionData = questionsAndOptions[questionCount];
+                const questionElement = document.querySelector(".question p");
+                questionElement.textContent = questionData.question;
+
+                // Set options
+                for (let i = 1; i <= 4; i++) {
+                    const optionLabel = document.querySelector(`#checkbox${i} + .option-label`);
+                    optionLabel.textContent = questionData.options[i - 1];
+                }
+
+                // Reset selected option and checkboxes
+                selectedOption = null;
+                for (let i = 1; i <= 4; i++) {
+                    const checkbox = document.getElementById(`checkbox${i}`);
+                    checkbox.classList.remove('checked');
+                }
+            }
+        }
+
+        function endTask() {
+            // Add your logic to end the task here
+            alert("Task ended.");
+        }
+
+        // Load the initial question
+        loadQuestion(currentQuestion); -->
+    </script>
+</body>
+</html>

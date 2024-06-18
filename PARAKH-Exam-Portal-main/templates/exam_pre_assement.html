@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .question {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .options {
+            text-align: left;
+        }
+        .option {
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .checkbox.checked {
+            background-color: #007BFF;
+        }
+        .option-label {
+            vertical-align: middle;
+        }
+        .submit-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pre Assessment</h1>
+        <div class="question">
+            <p class="options">Question 1: What is the capital of France?</p>
+        </div>
+        <div class="options">
+            <div class="option" onclick="toggleCheckbox(1)">
+                <div class="checkbox" id="checkbox1"></div>
+                <label class="option-label">Paris</label>
+            </div>
+            <div class="option" onclick="toggleCheckbox(2)">
+                <div class="checkbox" id="checkbox2"></div>
+                <label class="option-label">Berlin</label>
+            </div>
+            <div class="option" onclick="toggleCheckbox(3)">
+                <div class="checkbox" id="checkbox3"></div>
+                <label class="option-label">Madrid</label>
+            </div>
+            <div class="option" onclick="toggleCheckbox(4)">
+                <div class="checkbox" id="checkbox4"></div>
+                <label class="option-label">Rome</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="options">Question 2: What is the largest planet in our solar system?</p>
+        </div>
+        <div class="options">
+            <div class="option" onclick="toggleCheckbox(5)">
+                <div class="checkbox" id="checkbox5"></div>
+                <label class="option-label">Jupiter</label>
+            </div>
+            <div class="option" onclick="toggleCheckbox(6)">
+                <div class="checkbox" id="checkbox6"></div>
+                <label class="option-label">Mars</label>
+            </div>
+            <div class="option" onclick="toggleCheckbox(7)">
+                <div class="checkbox" id="checkbox7"></div>
+                <label class="option-label">Earth</label>
+            </div>
+            <div class="option" onclick="toggleCheckbox(8)">
+                <div class="checkbox" id="checkbox8"></div>
+                <label class="option-label">Venus</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="options">Question 3: Who wrote the play "Romeo and Juliet"?</p>
+        </div>
+        <div class="options">
+            <div class="option" onclick="toggleCheckbox(9)">
+                <div class="checkbox" id="checkbox9"></div>
+                <label class="option-label">William Shakespeare</label>
+            </div>
+            <div class="option" onclick="toggleCheckbox(10)">
+                <div class="checkbox" id="checkbox10"></div>
+                <label class="option-label">Charles Dickens</label>
+            </div>
+            <div class="option" onclick="toggleCheckbox(11)">
+                <div class="checkbox" id="checkbox11"></div>
+                <label class="option-label">Jane Austen</label>
+            </div>
+            <div class="option" onclick="toggleCheckbox(12)">
+                <div class="checkbox" id="checkbox12"></div>
+                <label class="option-label">George Orwell</label>
+            </div>
+        </div>
+
+        <button class="submit-button" onclick="submitQuiz()">Submit</button>
+    </div>
+
+    <script>
+        let selectedOptions = {};
+
+        function toggleCheckbox(optionNumber) {
+            // Toggle the selected checkbox
+            const checkbox = document.getElementById(`checkbox${optionNumber}`);
+            checkbox.classList.toggle('checked');
+
+            // Update the selected options
+            if (checkbox.classList.contains('checked')) {
+                selectedOptions[optionNumber] = true;
+            } else {
+                delete selectedOptions[optionNumber];
+            }
+        }
+
+        function submitQuiz() {
+            if (Object.keys(selectedOptions).length === 0) {
+                alert("Please select at least one option for each question.");
+            } else {
+                // Handle the selected options and submission logic here
+                alert("Selected options: " + Object.keys(selectedOptions).join(', '));
+            }
+        }
+    </script>
+</body>
+</html>

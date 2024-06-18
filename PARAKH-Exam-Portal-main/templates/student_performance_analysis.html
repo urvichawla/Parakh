@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Student Performance Analysis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.css">
+    <!-- <link rel="stylesheet" href="{% static 'css/student_performance_analysis' %}"> -->
+    <!-- Not using css file, causing some layout display problem with canvas -->
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+.container {
+    max-width: 600px; /* Adjust the max-width for landscape layout */
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+h1 {
+    color: #333;
+}
+canvas {
+    max-width: 100%;
+    max-height: 300px; /* Adjust the max-height for landscape layout */
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Performance Analysis</h1>
+        <canvas id="performanceGraph" width="400" height="200"></canvas>
+        <h2>Performance Over Time</h2>
+        <canvas id="pieChart" width="200" height="200"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script>
+        // Sample data for the graph (replace with your actual data)
+        const performanceData = {
+            labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"],
+            datasets: [{
+                label: "Performance",
+                data: [60, 65, 70, 75, 80, 85, 90], // Performance scores
+                backgroundColor: "rgba(75, 192, 192, 0.2)",
+                borderColor: "rgba(75, 192, 192, 1)",
+                borderWidth: 1,
+                fill: true,
+            }],
+        };
+
+        // Sample data for the pie chart (replace with your actual data)
+        const pieChartData = {
+            labels: ["Physics", "Chemistry", "Mathematics"],
+            datasets: [{
+                data: [30, 25, 45], // Percentage of understanding for Physics, Chemistry, and Mathematics
+                backgroundColor: ["#ff5733", "#ffbf33", "#33ff57"],
+            }],
+        };
+
+        // Create the performance graph
+        const performanceGraph = document.getElementById("performanceGraph").getContext("2d");
+        new Chart(performanceGraph, {
+            type: "line",
+            data: performanceData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: "Performance Score",
+                        },
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: "Days",
+                        },
+                    },
+                },
+            },
+        });
+
+        // Create the pie chart
+        const pieChart = document.getElementById("pieChart").getContext("2d");
+        new Chart(pieChart, {
+            type: "pie",
+            data: pieChartData,
+            options: {
+                plugins: {
+                    legend: {
+                        position: "bottom",
+                    },
+                },
+            },
+        });
+    </script>
+</body>
+</html>

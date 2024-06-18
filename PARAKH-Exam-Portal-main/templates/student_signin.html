@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Portal - Sign In</title>
+    <link rel="stylesheet" href="{% static 'css/student_signin.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Exam Portal - Sign In</h1>
+        <form action="#" method="post">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="Enter Username" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <!-- <button class="btn" type="submit">Sign In</button> -->
+            <button type="submit" class="btn btn-primary">Log In</button>
+        </form>
+        <p class="spacer">Don't have an account? <a href="{% url 'student_signup' %}">Sign Up</a></p>
+        <p class="forgot" align="center"><a href="{% url 'forgot_credentials'%}">Forgot Password?</p>
+    </div>
+</body>
+</html>

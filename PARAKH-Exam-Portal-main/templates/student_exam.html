@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Exams</title>
+    <link rel="stylesheet" href="{% static 'css/student_exam.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1>Available Exams</h1>
+    </div>
+    {% for category in data %}
+    <div class="container">
+        <div class="exam-card">
+            <h2>{{category.title}}</h2>
+            <p>{{category.detail}}</p>
+            <button onclick="startExam('PreAssessment')"><a href="{% url 'studexam_mcq' category.id %}">Start Assessment</a></button>
+        </div>
+        <!-- <div class="exam-card">
+            <h2>Exam 1</h2>
+            <p>Description of Exam 1 goes here.</p>
+            <button onclick="startExam('Exam2')"><a href="{% url 'exam_mcq' %}">Start Assessment</a></button>
+        </div> -->
+        <!-- <div class="exam-card">
+            <h2>Exam 2</h2>
+            <p>Description of Exam 2 goes here.</p>
+            <button onclick="startExam('Exam2')">Start Assessment</button>
+        </div>
+        <div class="exam-card">
+            <h2>Exam 3</h2>
+            <p>Description of Exam 3 goes here.</p>
+            <button onclick="startExam('Exam3')">Start Assessment</button>
+        </div> -->
+    </div>
+    {% endfor %}
+</body>
+</html>

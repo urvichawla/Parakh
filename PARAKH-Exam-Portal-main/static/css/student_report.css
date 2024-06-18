@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.report-card {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.report-card h2 {
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+.subject {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.subject label {
+    text-align: left;
+    color: #555;
+}
+.subject span {
+    font-weight: bold;
+    color: #007bff;
+}
+.total-score {
+    font-weight: bold;
+    color: #333;
+}
+.grade {
+    font-size: 24px;
+    color: #28a745;
+}

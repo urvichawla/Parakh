@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Online Examination</title>
+    <link rel="stylesheet" href="{% static 'css/student_page.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Unlock Your Potential with our Online Examination Platform</h1>
+        <p>Empowering students to succeed in exams through interactive learning and comprehensive exam preparation.</p>
+    </header>
+    <section class="cta-section">
+        <h2>Ready to Ace Your Exams?</h2>
+        <p>Join our online platform and take the first step towards exam success.</p>
+        <a href="{% url 'student_signup' %}" class="cta-button">Sign Up</a>
+        <a href="{% url 'student_login' %}" class="cta-button">Log In</a>
+    </section>
+    <section class="features-section">
+        <h2>Key Features</h2>
+        <ul>
+            <li><span>&#10003;</span> Interactive practice tests for diverse subjects.</li>
+            <li><span>&#10003;</span> Detailed performance analytics to track your progress.</li>
+            <li><span>&#10003;</span> Accessible anytime, anywhere for your convenience.</li>
+            <li><span>&#10003;</span> Engaging learning materials to enhance your knowledge.</li>
+        </ul>
+    </section>
+    <section class="testimonial-section">
+        <h2>What Our Students Say</h2>
+        <div class="testimonial">
+            <p>"This platform transformed my study routine. The practice tests are incredibly helpful and the insights into my performance are enlightening."</p>
+            <p><em>- John Doe, Student</em></p>
+        </div>
+        <div class="testimonial">
+            <p>"I can't believe how much my exam performance improved after using this platform. It's a game-changer!"</p>
+            <p><em>- Jane Smith, Student</em></p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 Online Examination Portal - Student Section. All rights reserved.</p>
+    </footer>
+</body>
+</html>

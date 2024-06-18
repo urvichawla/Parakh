@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Information</title>
+    <link rel="stylesheet" href="{% static 'css/student_account.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-photo">
+            <img src="static\img\phoyo.jpg" alt="Profile Photo">
+        </div>
+        <h2>Account Information</h2>
+        <div class="info">
+            <label>Username:</label>
+            <p>{{user.username}}</p>
+        </div>
+        <div class="info">
+            <label>First Name:</label>
+            <p>{{user.first_name}}</p>
+        </div>
+        <div class="info">
+            <label>Last Name:</label>
+            <p>{{user.last_name}}</p>
+        </div>
+        <div class="info">
+            <label>Email ID:</label>
+            <p>{{user.email}}</p>
+        </div>
+        <div class="info">
+            <label>Date of Joining:</label>
+            <p>{{user.date_joined}}</p>
+        </div>
+        <div class="button-container">
+            <button class="edit-button">Edit Profile</button>
+        </div>
+    </div>
+</body>
+</html>

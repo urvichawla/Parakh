@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{category.title}}</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Available Exams</h1>
+    </div>
+    {% for category in data %}
+    <div class="container">
+        <div class="exam-card">
+            <h2>{{category.title}}</h2>
+            <p>{{category.detail}}</p>
+            <button onclick="startExam('PreAssessment')"><a href="{% url 'studexam_mcq' category.id %}">Start Assessment</a></button>
+        </div>
+    </div>
+</body>
+</html>

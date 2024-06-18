@@ -1,0 +1,257 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'css/admin_board.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="user-profile">
+            <div class="user-icon">
+                <i class="fas fa-user-circle"></i> <!-- User profile icon -->
+            </div>
+            <div class="user-info1">
+                <span class="user-name">Hi Admin</span> <!-- Replace with the Gmail ID -->
+               
+            </div>
+        </div>
+        <div class="logo"></div>
+        
+        <ul class="menu"  id="menu-list">
+            <li>
+                
+                <a href="{url 'admin_board'}" class="active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    
+                    <span>Dashboard</span>
+            
+                </a>
+            </li>
+            <li>
+                
+                <a href="#">
+                    <i class="fas fa-user-graduate"></i>
+                    
+                    <span>Student</span>
+                </a>
+
+
+            </li>
+            <li>
+                
+                <a href="#">
+                    <i class="fas fa-book"></i>
+                    
+                    <span>Questions</span>
+                </a>
+
+
+            </li>
+        
+        <li>
+            
+            <a href="#">
+                <i class="fas fa-chart-bar"></i>
+                
+                <span>Performance Analysis</span>
+            </a>
+            
+
+        </li>
+    </li>
+    <li>
+        
+        <a href="#">
+            <i class="fas fa-file-alt"></i>
+            
+            <span>Report</span>
+        </a>
+        
+
+    </li>
+    <li id="signout">
+        <button type="submit"><a href="{% url 'admin_logout' %}">SignOut</a></button>
+    </li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <h2>Online Exam System</h2>
+            </div>
+            <div class="user-info">
+                <div class="hi-user">
+                    <button id="anct" ><a href="#">Account</a></button>
+                    </div>
+
+                
+
+            </div>
+            
+        </div>
+        
+        <div class="card-container">
+            <h3 class="main-title">Exam</h3>
+            <div class="card-wrapper">
+                <div class="class-card">
+                    <div class="card-header">
+                        <div class="demo10">
+                            <span class="title">Total Students<i class="fas fa-book"></i></span>
+                            <span class="value">Demo10</span>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-wrapper">
+                <div class="class-card red">
+                    <div class="card-header">
+                        <div class="demo10">
+                            <span class="title">Total Questions<i class="fas fa-graduation-cap"></i></span>
+                            <span class="value">Department</span>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-wrapper">
+                <div class="class-card green">
+                    <div class="card-header">
+                        <div class="demo10">
+                            <span class="title">Total Course<i class="fas fa-calendar-alt"></i></span>
+                            <span class="value">Thursday,21 September 2023</span>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+
+            
+            </div>
+          
+            </div>
+            
+        
+            <div class="tabular-wrapper">
+            
+                <div class="table-container">
+                    <!---<table border="black">
+                        <thead>
+                            <tr>
+                                <th><button id="reload">Reload</button></th>
+                            </thead>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Show Entries
+                                    <select name="number" id="number">
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                    </select>
+                                </td>
+                                <td id="searchbar">
+                                    <div id="search">
+                                    Search
+                                    <input type="text" placeholder="search">
+                                    </div>
+                                     
+
+                                </td>
+                                </tr>
+                                <tr>
+                                    <td>#Exam Name</td>
+                                    <td>Course</td>
+                                    <td>Lecture</td>
+                                    <td>NumberofQuestions</td>
+                                    <td>Time</td>
+                                    <td>Action</td>
+                                </tr>
+                                <tr>
+                                    <div id="two">
+                                    <td>FirstTerminalExamination</td>
+                                    <td>Demo course</td>
+                                    <td>Demo Lecture</td>
+                                    <td>4</td>
+                                    <td>(15 minutes)</td>
+                                    <td>Print Results</td>
+                                    </div>
+                                </tr>
+
+                            
+
+                        
+                    </table>
+                    <button id="reload">Reload</button>
+                    <table class="table" border="black">
+                        <thead>
+                          <tr>
+                            <td>
+                                Show Entries
+                                <select name="number" id="number">
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                </select>
+                            </td>
+                            <td colspan="4"></td>
+                            <td id="searchbar">
+                                <div id="search">
+                                Search
+                                <input type="text" placeholder="search">
+                                </div>
+                                 
+
+                            </td>
+                         
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>#Exam Name</td>
+                                    <td>Course</td>
+                                    <td>Lecture</td>
+                                    <td>NumberofQuestions</td>
+                                    <td>Time</td>
+                                    <td>Action</td>
+                            
+                          </tr>
+                          <tr>
+                            <td>FirstTerminalExamination</td>
+                                    <td>Demo course</td>
+                                    <td>Demo Lecture</td>
+                                    <td>4</td>
+                                    <td>(15 minutes)</td>
+                                    <td><button id="print">Print Results</button></td>
+                          </tr>
+                          <tr>
+                            <td>
+                                Showing 1 to 1 of 1 entries>
+                                <td colspan="4"></td>
+                                <td><input type="text" id=" prev" placeholder="previous">
+                                <input type="number" id="num" placeholder="1">
+                                <input type="text" id=" next" placeholder="next">
+                            </td>
+                                
+                            </td>
+                          </tr>
+                         
+                        </tbody>
+                      </table>
+                    
+                </div>
+            </div>--->
+
+
+            
+        </div>
+    </div>
+    
+
+    </body>

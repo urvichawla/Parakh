@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'css/admin_performance_analysis.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="menu-item">
+            <a href="#dashboard">Dashboard</a>
+        </div>
+        <!-- Add more menu items as needed -->
+    </div>
+
+    <div class="content">
+        <div class="dashboard-title">Dashboard</div>
+        <div class="performance-chart">
+            <!-- Add performance charts and graphs here -->
+            <h2>Overall Performance</h2>
+            <canvas id="performanceChart" width="400" height="200"></canvas>
+        </div>
+        <div class="student-count">
+            <h2>Enrollment Statistics</h2>
+            <p>Total Students Enrolled: <span id="totalStudents">500</span></p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script>
+        // Sample code to create a performance chart (you can customize this)
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        const performanceChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Student 1', 'Student 2', 'Student 3', 'Student 4', 'Student 5'],
+                datasets: [{
+                    label: 'Scores',
+                    data: [85, 92, 78, 95, 88],
+                    backgroundColor: 'rgba(74, 144, 226, 0.7)',
+                    borderColor: 'rgba(74, 144, 226, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+
+        // Sample code to update total student count (you would fetch this from a backend)
+        const totalStudents = 500; // Replace with the actual count
+        document.getElementById('totalStudents').textContent = totalStudents;
+    </script>
+</body>
+</html>
